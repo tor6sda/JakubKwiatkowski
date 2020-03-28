@@ -1,4 +1,3 @@
-import util.DatabaseConnection;
 
 import java.sql.*;
 
@@ -10,7 +9,7 @@ public class przyklad2 {
 //        String password = "Kijas66085@";
         String query = "Select * from address where add_city like \"%\"?\"%\";";
         try (
-                PreparedStatement preStatement = DatabaseConnection.getInstance().getConnection().prepareStatement(query);
+                PreparedStatement preStatement = DataBaseConnection.getInstance().getConnection().prepareStatement(query);
         ) {
             preStatement.setString(1,"Paris");
             ResultSet resultSet = preStatement.executeQuery();
